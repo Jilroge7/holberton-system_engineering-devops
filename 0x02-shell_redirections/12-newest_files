@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -clt | head -10
+ls -clt | head 
