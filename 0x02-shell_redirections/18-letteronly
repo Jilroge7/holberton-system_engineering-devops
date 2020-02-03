@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -i '^[:aplha:]*' /etc/ssh/sshd_config
+grep -h '^[:aplha:]*' /etc/ssh/sshd_config
