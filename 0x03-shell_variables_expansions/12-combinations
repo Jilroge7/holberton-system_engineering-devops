@@ -1,2 +1,2 @@
 #!/bin/bash
-echo {a-z}{a-z} | grep 
+echo -e {a-z}{a-z} | grep -i 'oo'
