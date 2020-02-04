@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($DECIMAL#16))
+printf "%d>0x16\n" $DECIMAL
