@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%d>0x16\n" $DECIMAL
+printf "%X\n" $DECIMAL
