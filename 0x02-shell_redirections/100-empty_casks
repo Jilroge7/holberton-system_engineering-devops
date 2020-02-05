@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -name | tr ' ' '\n'
+find . -empty -name printf "%f\n"
