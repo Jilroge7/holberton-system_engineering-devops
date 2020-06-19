@@ -4,6 +4,7 @@ minute=1
 hour=1
 max1=13
 max2=60
+echo "Hour: 0"
 while [ "$minute" -lt "$max2" ]
 do
 	echo "$minute"
