@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script to display holberton school 10x
+for (( c = 0; c < 10; c++ )); do echo "Holberton School"; done
