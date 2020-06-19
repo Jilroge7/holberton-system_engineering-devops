@@ -11,7 +11,7 @@ do
 	if [ "$minute" -eq 59 ] && [ "$hour" -lt "$max1" ]
 	then
 		echo "$minute"
-		echo "Hour: \"$hour\""
+		echo "Hour: $hour"
 		(( hour++ ))
 		minute=1
 	fi
