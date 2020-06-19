@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# while with if statement to catch at 9 and say hi
+c=1
+max=11
+while [ "$c" -lt "$max" ]
+do
+	echo "Holberton School"
+	if [ "$c" -eq 9 ]
+	then
+		echo "Hi"
+	fi
+	(( c++ ))
+done
