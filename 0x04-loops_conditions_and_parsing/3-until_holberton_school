@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# until loop example to print 10x
+c=0
+max=10
+until [ "$c" -eq "$max" ]
+do
+	echo "Holberton School"
+	(( c++ ))
+done
