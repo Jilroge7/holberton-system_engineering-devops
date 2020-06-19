@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# while loop and if to print specific statements
+c=1
+max=11
+while [ "$c" -lt "$max" ]
+do
+	if [ "$c" -eq 4 ]
+	then
+		echo "bad luck"
+	elif [ "$c" -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+	(( c++ ))
+done
