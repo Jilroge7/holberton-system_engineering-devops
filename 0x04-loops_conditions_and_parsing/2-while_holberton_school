@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# script using while loop
+c=0
+max=9
+while [ "$c" -le "$max" ]
+do
+	echo "Holberton School";
+	(( c++ ))
+done
