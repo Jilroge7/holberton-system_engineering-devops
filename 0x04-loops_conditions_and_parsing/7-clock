@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# display the clock
+minute=1
+hour=1
+max1=13
+max2=60
+while [ "$minute" -lt "$max2" ]
+do
+	echo "$minute"
+	(( minute++ ))
+	if [ "$minute" -eq 59 ] && [ "$hour" -lt "$max1" ]
+	then
+		echo "$minute"
+		echo "Hour: \"$hour\""
+		(( hour++ ))
+		minute=1
+	fi
+done
