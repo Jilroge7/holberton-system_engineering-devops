@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 # my very own fizzbuzz shell loop
+c=3
+d=5
 for (( i=1; i < 101; i++ ))
 do
-	if (( i % 5 == 0 ))
-	then
-		echo "Buzz"
-	elif (( i % 3 == 0 ))
-	then
-		echo "Fizz"
-	elif (( i % 5 == 0 && i % 3 == 0 ))
+	if (( i % d == 0 && i % c == 0 ))
 	then
 		echo "FizzBuzz"
+	elif (( i % d == 0 ))
+	then
+		echo "Buzz"
+	elif (( i % c == 0 ))
+	then
+		echo "Fizz"
 	else
 		echo "$i"
 	fi
