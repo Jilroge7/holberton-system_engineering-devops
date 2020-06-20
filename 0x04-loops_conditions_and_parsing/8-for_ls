@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# using while to print list format of ls
+for l in "$ls ./"
+do
+	ls | rev | cut -d "-" -f1 | rev
+	break
+done
