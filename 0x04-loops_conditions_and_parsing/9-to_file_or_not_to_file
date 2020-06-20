@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script to return file information
-file=/home/vagrant/holberton-system_engineering-devops/0x04-loops_conditions_and_parsing/holbertonschool
+file=holbertonschool
 if [ -e "$file" ]
 then
 	echo "holbertonschool file exists"
