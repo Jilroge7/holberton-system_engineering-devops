@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# script to return file information
+file=/home/vagrant/holberton-system_engineering-devops/0x04-loops_conditions_and_parsing/holbertonschool
+if [ -f "$file" ]
+then
+	echo "holbertonschool file exists"
+	if [ ! -s "$file" ]
+	then
+		echo "holbertonschool file is empty"
+	else
+		echo "holbertonschool file is not empty"
+	fi
+	echo "holbertonschool is a regular file"
+else
+	echo "holbertonschool file does not exist"
+fi
