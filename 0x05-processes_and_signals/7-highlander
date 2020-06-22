@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# bash script that is friggin invincible.
+trap "echo 'I am invincible!!!'" SIGINT SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
