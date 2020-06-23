@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# advanced 100
+contents="/etc/passwd"
+while IFS= read -r line
+do
+	echo "$line" | cut -f 1
+done < "$contents"
