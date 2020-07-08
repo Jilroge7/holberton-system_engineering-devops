@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # script to change my home ip address...
-echo 'hello'
+cp /etc/hosts ~/hosts_bUP
+echo 127.0.02 ~/hosts_bUP
+echo 8.8.8.8 ~/hosts_bUP
+cp -f ~/hosts_bUP /etc/hosts
