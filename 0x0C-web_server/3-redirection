@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# install nginx and configure server so that /redirect_me is redirecting to another page
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html 
+sudo sed s/rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+sudo service nginx restart
