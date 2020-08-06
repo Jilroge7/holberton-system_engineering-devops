@@ -3,7 +3,10 @@
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo echo "Holberton School" | sudo tee /var/www/html/index.html 
-sudo sed -i 's/rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4' permanent; /etc/nginx/sites-available/default
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+REDIRECT="https://www.youtube.com/watch?v=QH2-TGUlwu4"
+FILE="/etc/nginx/sites-available/default"
+sed -i "42a rewrite ^/redirect_me ""${REDIRECT}"" permanent;\n" $FILE
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+sed -i "44a error_page 404 /custom_404.html; location = /custom_404.html { root /var/www/html/;internal;}" $FILE
 sudo service nginx restart
