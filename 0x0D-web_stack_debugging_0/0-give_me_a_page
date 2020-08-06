@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# debugging task 0
+sudo apt-get update
+sudo apt-get install -y apache2
+echo "ServerName localhost" >> sudo tee -a /etc/apache2/apache2.conf
+sudo echo "Hello Holberton"
+sudo service apache2 start
+
