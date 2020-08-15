@@ -8,5 +8,5 @@ FILE="/etc/nginx/sites-available/default"
 sudo sed -i "\\\t42a rewrite ^/redirect_me ""${REDIRECT}"" permanent;\n" $FILE
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 sudo sed -i "\\\t44a error_page 404 /custom_404.html; location = /custom_404.html { root /var/www/html/;internal;}" $FILE
-sudo sed -i "\\\t37a add-header X-Served-By '1672-web-01';\n" $FILE
+sudo sed -i "\\\t37a add-header X-Served-By "'1672-web-01'";\n" $FILE
 sudo service nginx restart
