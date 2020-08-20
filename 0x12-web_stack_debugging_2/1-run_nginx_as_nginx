@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script to run Nginx as user'nginx'
+sudo service nginx stop
+
+sudo service nginx restart
