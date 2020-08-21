@@ -5,6 +5,10 @@ global
         daemon
         maxconn 2048
         tune.ssl.default-dh-param 2048
+	ca-base /etc/ssl/certs
+        crt-base /etc/ssl/private
+        ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
+        ssl-default-bind-options no-sslv3
 
     # Default ciphers to use on SSL-enabled listening sockets.
     # For more information, see ciphers(1SSL).
@@ -29,16 +33,13 @@ defaults
 
 frontend front_server
         bind *:80
-        mode http
+        default_backend back_server
+
+frontend www-https
+        bind *:443 ssl crt www.cheeseextrapickles.tech.pem                                                                      http-request set-header X-Forwarded-Proto https
         default_backend back_server
 
 backend back_server
-        mode http
         balance roundrobin
-        server 1672-web-01 34.75.128.100
-        server 1672-web-02 54.91.111.249
-
-frontend www-https
-        bind 54.173.117.2:443 ssl crt /etc/ssl/private/www.cheeseextrapickles.tech.pem
-        http-request set-header X-Forwarded-Proto https
-        default_backend back_server
+        server 1672-web-01 34.75.128.100:80 check
+        server 1672-web-02 54.91.111.249:80 check
