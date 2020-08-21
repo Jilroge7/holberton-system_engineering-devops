@@ -2,10 +2,14 @@
 # Script to run Nginx as user'nginx'
 sudo service nginx stop
 FILE="/etc/nginx/nginx.conf"
-FILE2="/etc/nginx/sites-enabled/default"
+chown nginx:nginx $FILE
+FILE2="/etc/nginx/sites-available/default"
+chown nginx:nginx $FILE
+chmod u+rwx $FILE
 sudo sed -i 'a user nginx;' $FILE
 sudo chown -R nginx /var/www
 sudo chmod 775 /var/www
 sudo chmod g+s /var/www
 sudo sed '21,22 s/80/8080' $FILE2
+pkill apache2
 sudo service nginx restart
