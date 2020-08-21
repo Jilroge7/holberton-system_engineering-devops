@@ -6,7 +6,7 @@ chown nginx:nginx $FILE
 chown nginx:nginx $FILE2
 chmod u+rwx $FILE
 chmod u+rwx $FILE2
-sudo sed -i's/#user www-data/user nginx/' $FILE
+sudo sed -i 's/#user www-data/user nginx/' $FILE
 sudo sed -i 's/80/8080' $FILE2
 pkill apache2
 su nginx service nginx restart
