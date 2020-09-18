@@ -12,12 +12,12 @@ def top_ten(subreddit):
     about = about.json()
     outdict = about.get("data")
     child = outdict.get("children")
-    try:
+    if about.status_code != 200:
+        print(None)
+        return
+    else:
         for key in child:
             insdict = key.get("data")
             toplist = insdict.get("title")
             print(toplist)
-        return
-    except:
-        print(None)
         return
