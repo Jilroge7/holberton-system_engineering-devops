@@ -10,9 +10,9 @@ def top_ten(subreddit):
     about = requests.get(url, headers={"User-Agent": "User"},
                          allow_redirects=False)
     about = about.json()
-    outdict = about.get("data")
-    child = outdict.get("children")
     try:
+        outdict = about.get("data")
+        child = outdict.get("children")
         for key in child:
             insdict = key.get("data")
             toplist = insdict.get("title")
